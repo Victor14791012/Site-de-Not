@@ -1,0 +1,33 @@
+body {
+  background-image: linear-gradient(to bottom, #5390ec, #13034d);
+}
+
+#lista-produtos img{
+width: auto;
+height: auto;
+}
+
+#a {
+  background-color: white;
+  border-radius: 2%;
+ 
+}
+
+.zoom {
+ 
+  transition: transform 0.5s ;
+}
+
+/* Define a escala aumentada quando o mouse está sobre o elemento */
+.zoom:hover {
+  transform: scale(1.05);
+}
+
+#listaDeProdutos {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 300px;
+  border-radius: 2%;
+}
+
+
+
