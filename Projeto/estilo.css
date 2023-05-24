@@ -1,17 +1,29 @@
 body {
-  background-image: linear-gradient(to bottom, #5390ec, #13034d);
+  background-image: linear-gradient(to bottom, #5390ec, #836fce);
 }
 
-#lista-produtos img{
-width: auto;
-height: auto;
-}
 
-#a {
+
+.a {
+  
   background-color: white;
   border-radius: 2%;
  
 }
+
+.a img{
+width: auto;
+height: auto ;
+
+}
+
+#b {
+  
+  background-color: white;
+  border-radius: 2%;
+ 
+}
+
 
 .zoom {
  
@@ -29,5 +41,15 @@ height: auto;
   border-radius: 2%;
 }
 
+.banner {
 
+  width: auto;
+}
+
+.resto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
