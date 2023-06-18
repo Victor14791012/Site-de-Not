@@ -1,5 +1,9 @@
 class Produto {
   constructor(nome, data_de_cadastro, descricao, preco) {
+    if (!nome || !data_de_cadastro || !descricao || preco === undefined) {
+      throw new Error("Faltam informações para criar o produto");
+    }
+
     this.nome = nome;
     this.data_de_cadastro = data_de_cadastro;
     this.descricao = descricao;
@@ -28,20 +32,17 @@ class Produto {
 
       listaProdutos.appendChild(produto);
     } catch (error) {
-      console.error("Erro ao exibir o produto:", error.message);
+      console.log("Erro ao exibir o produto:");
     }
   }
 }
 
 class ProdutoDestaque extends Produto {
-  constructor(
-    nome,
-    data_de_cadastro,
-    descricao,
-    preco,
-    imagem_destaque
-  ) {
+  constructor(nome, data_de_cadastro, descricao, preco, imagem_destaque) {
     super(nome, data_de_cadastro, descricao, preco);
+    if (!imagem_destaque) {
+      throw new Error("Faltam informações para criar o produto destaque");
+    }
     this.imagem_destaque = imagem_destaque;
   }
 
@@ -74,17 +75,18 @@ class ProdutoDestaque extends Produto {
 
       listaProdutosDes.appendChild(produtoDestaque);
     } catch (error) {
-      console.error("Erro ao exibir o produto em destaque:", error.message);
+      console.log("Erro ao exibir o produto em destaque:");
     }
   }
 }
+
 
 let produto1 = new ProdutoDestaque("Notebook Samsung", "22-04-2023", " Core i5-1135G7 8GB 256GB SSD Tela Full HD 15.6 Windows 11 Book", 19.99, "https://m.media-amazon.com/images/I/51WG6cmUhyL._AC_SL1000_.jpg");
 produto1.mostrarProdutoDestaque();
 
 
 
-let notebook1 = new Produto("Notebook Samsung", "22-04-2023", "Core i5-1135G7 8GB 256GB SSD Tela Full HD 15.6 Windows 11 Book", 19.99);
+let notebook1 = new Produto("Notebook Samsung",  "22-04-2023", "Core i5-1135G7 8GB 256GB SSD Tela Full HD 15.6 Windows 11 Book", 19.99);
 notebook1.mostrarProduto();
 
 let notebook2 = new Produto("Notebook Dell", "22-04-2023", "Core i7-1165G7 16GB 512GB SSD Tela Full HD 15.6 Windows 11", 24.99);
